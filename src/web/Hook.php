@@ -18,7 +18,7 @@ if ($message['text'] == '/help') {
 }
 if ($commands[$arr['message']['text']]) {
     $value = $commands[$arr['message']['text']];
-    require_once __DIR__ . '/../commands/' . $value['class'] . '.php';
+    require_once __DIR__ . '/../commands/' . $value['class'] . 'Command.php';
     $obj = new $value['class']($chatId);
     $obj->start();
     exit('ok');
