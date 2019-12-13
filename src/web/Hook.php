@@ -15,8 +15,7 @@ if ($message['text'] == '/help') {
     $obj = new HelpCommand($chatId, $commands);
     $obj->start();
     exit('ok');
-}
-if ($commands[$arr['message']['text']]) {
+} else if ($commands[$arr['message']['text']]) {
     $value = $commands[$arr['message']['text']];
     require_once __DIR__ . '/../commands/' . $value['class'] . 'Command.php';
     $str = $value['class'].'Command';
